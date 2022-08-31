@@ -1,59 +1,46 @@
 const collapsibleButton = document.querySelector('.collapsible__button');
 const collapsibleContent = document.querySelector('.collapsible__content');
-const collapsibleActionHidden = document.querySelector('.collapsible__action--hidden');
-const collapsibleActionVisible = document.querySelector('.collapsible__action--visible');
+const showContentButton = document.querySelector('.collapsible__action--hidden');
+const hideContentButton = document.querySelector('.collapsible__action--visible');
 
-const contentEmergence = [
+const contentAnimationEmergence = [
   { visibility: 'visible' },
   { position: 'static' },
 ];
-const contentHiding = [
+
+const contentAnimationHiding = [
   { visibility: 'hidden' },
   { position: 'absolute', top: '-100%'},
 ];
 
-const collapsAnimationTiming = { fill: 'forwards' }
+const collapsAnimationTiming = { fill: 'forwards' };
 
+function showElement(el) {
+  el.animate(contentAnimationEmergence, collapsAnimationTiming);
+}
 
-function showContent() {
-  collapsibleContent.animate(
-    contentHiding,
-    collapsAnimationTiming,
-  )
-  collapsibleActionVisible.animate(
-    contentHiding,
-    collapsAnimationTiming,
-  )
-  collapsibleActionHidden.animate(
-    contentEmergence,
-    collapsAnimationTiming,
-  )
+function hideElement(el) {
+  el.animate(contentAnimationHiding, collapsAnimationTiming);
 }
 
 function hideContent() {
-  collapsibleContent.animate(
-    contentEmergence,
-    collapsAnimationTiming,
-  )
-  collapsibleActionVisible.animate(
-    contentEmergence,
-    collapsAnimationTiming,
-  )
-  collapsibleActionHidden.animate(
-    contentHiding,
-    collapsAnimationTiming,
-  )
+  hideElement(collapsibleContent);
+  hideElement(hideContentButton);
+  showElement(showContentButton);
 }
 
-collapsibleActionHidden.animate(
-  contentHiding,
-  collapsAnimationTiming,
-)
+function showContent() {
+  showElement(collapsibleContent);
+  showElement(hideContentButton);
+  hideElement(showContentButton);
+}
+
+hideElement(hideContentButton);
+hideElement(collapsibleContent);
 
 collapsibleButton.addEventListener('click', (event) => {
-  const eventClassName = event.target.className;
-  const isHideButton = eventClassName.includes('collapsible__action--visible');
-  isHideButton ? showContent() : hideContent()
+  const isShowContentButton = (event.target === showContentButton);
+  isShowContentButton ? showContent() : hideContent();
 })
 
 

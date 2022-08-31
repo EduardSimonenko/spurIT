@@ -1,1 +1,87 @@
 /* Смотри сколько снизу свободного места! Оно идеально подойдёт, чтобы писать твои стили! */
+body{
+  margin: 0;
+}
+.weeks-products {
+  background-color: #F6F6F6;
+  padding: 40px 0;
+}
+.weeks-products__header {
+  font-weight: 900;
+  font-size: 48px;
+  line-height: 72px;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.product-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  max-width: 1180px;
+  margin: 0 auto;
+  border-radius: 15px;
+}
+.product {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: white;
+  width: calc((100% - 40px)/3);
+  max-height: 482px;
+  border-radius: 45px;
+}
+
+.product__info{
+  padding: 0 24px 24px;
+  height: 100%;
+}
+
+.product__image {
+  border-radius: 12px 12px 0 0;
+}
+.product__name {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 24px;
+  line-height: 36px;
+  color: #2F2F2F;
+  font-weight: 900;
+  padding-top: 3px;
+}
+.product__description {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #2F2F2F;
+  height: 93px;
+  margin: 0;
+}
+.product__button {
+  width: 100%;
+  border: 2px solid #42940F;
+  border-radius: 8px;
+  color: #42940F;
+  background-color: white;
+  height: 48px;
+  margin-top: 25px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 26px;
+}
+
+.product__button:hover, .product__button:active{
+  background-color: #45971273;
+  cursor: pointer;
+}
+
+.product__button.product__button_disabled{
+  background-color: #4E4E4E;
+  border-color: #4E4E4E;
+  color: white;
+}
+
+.product__button.product__button_disabled:hover,
+.product__button.product__button_disabled:active{
+  background-color: #77777760;
+}

@@ -1,7 +1,10 @@
-/* Смотри сколько снизу свободного места! Оно идеально подойдёт, чтобы писать твои стили! */
 body{
   margin: 0;
   background-color: #F6F6F6;
+}
+
+.weeks-products {
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .weeks-products__header {
@@ -9,17 +12,21 @@ body{
   font-size: 48px;
   line-height: 72px;
   text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
 }
+
+.weeks-products__cards.cards {
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
 .cards {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
   max-width: 1180px;
-  padding: 0 15px;
-  margin: 0 auto;
   border-radius: 15px;
 }
+
 .card {
   display: flex;
   flex-direction: column;
@@ -29,6 +36,7 @@ body{
   width: calc((100% - 40px)/3);
   min-height: 482px;
   border-radius: 45px;
+  box-shadow: 0px 0px 45px 0px rgba(0, 0, 0, 0.18);
 }
 
 .card__info{
@@ -40,7 +48,6 @@ body{
   border-radius: 12px 12px 0 0;
 }
 .card__name {
-  font-family: Arial, Helvetica, sans-serif;
   font-size: 24px;
   line-height: 36px;
   color: #2F2F2F;
@@ -48,8 +55,6 @@ body{
   padding-top: 3px;
 }
 .card__description {
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: 400;
   font-size: 16px;
   line-height: 24px;
   color: #2F2F2F;
@@ -64,7 +69,6 @@ body{
   background-color: white;
   height: 48px;
   margin-top: 25px;
-  font-family: Arial, Helvetica, sans-serif;
   font-weight: 900;
   font-size: 18px;
   line-height: 26px;
@@ -99,8 +103,6 @@ body{
 .card__last-item-tag,
 .card__new-item-tag{
   text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: 400;
   font-size: 16px;
   line-height: 24px;
   padding: 0 16px;
